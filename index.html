@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AxyShows</title>
+  <link rel="stylesheet" href="style.css?v=6" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>AxyShows</h1>
+    </header>
+
+    <main id="library"></main>
+
+    <div id="player-container">
+      <div id="now-playing">Select a video...</div>
+
+      <video id="video-player"
+             controls
+             preload="metadata"
+             playsinline
+             webkit-playsinline
+             width="100%"
+             height="auto"></video>
+
+      <div id="player-controls">
+        <select id="sleep-timer" title="Sleep Timer">
+          <option value="0">💤 Off</option>
+          <option value="60">1 Hour</option>
+          <option value="120">2 Hours</option>
+          <option value="180">3 Hours</option>
+          <option value="240">4 Hours</option>
+        </select>
+
+        <button id="seek-back">-10s</button>
+
+        <button id="prev-btn">⏮ Prev</button>
+
+        <button id="play-pause-btn">▶</button>
+        
+        <button id="next-btn">⏭ Next</button>
+        
+        <button id="seek-fwd">+10s</button>
+
+        <button id="popout-btn">🗗 Pop Out</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="resume-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <h3>Continue Watching?</h3>
+      <p id="resume-text">Pick up where you left off?</p>
+      <div class="modal-actions">
+        <button id="resume-yes" class="btn-primary">Yes, Continue</button>
+        <button id="resume-no" class="btn-secondary">No, Start Over</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.8/dist/hls.min.js"></script>
+  <script src="script.js?v=6"></script>
+</body>
+</html>
